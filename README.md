@@ -1,8 +1,8 @@
-# parcel-threejs-boilerplate
-Boilerplate for a fast start with three.js
+# threejs-physics-boilerplate
+Boilerplate for a fast start with physics in three.js
 
 ### GitHub Page
-https://birdlaketree.github.io/parcel-threejs-boilerplate/
+https://birdlaketree.github.io/threejs-physics-boilerplate/
 
 ### how to deploy for github pages
 ```bash
