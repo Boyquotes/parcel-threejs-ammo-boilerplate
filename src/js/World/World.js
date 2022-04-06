@@ -5,6 +5,7 @@ import { createRenderer } from './system/renderer.js';
 import { createScene } from './components/scene.js';
 import { createCamera } from './components/camera.js';
 import { createLights } from './components/lights.js';
+import { createFloor } from './components/meshes/floor.js'
 import { colorStandardMaterial } from './components/materials/color.js';
 import { cube } from './components/meshes/cube.js'
 import { sphere } from './components/meshes/sphere.js'
@@ -17,16 +18,18 @@ class World {
     this.loop = new Loop(camera, scene, renderer);
     console.log('something');
 
-    const controls = new OrbitControls(camera, renderer.domElement)
+    const controls = new OrbitControls(camera, renderer.domElement);
+    const floor = createFloor(scene);
     const lights = createLights(scene);
     const material = colorStandardMaterial(0x3333ff);
 
-    const nItems = 4;
+    const nItems = 2;
+    const yShift = 2;
     for (let i = 0; i < nItems; i++) {
       for (let j = 0; j < nItems; j++) {
         let temp_cube = cube(material);
         temp_cube.position.x = (i - nItems/2) * 1.2 + 0.5;
-        temp_cube.position.y = (j - nItems/2) * 1.2 + 0.5;
+        temp_cube.position.y = (j - nItems/2) * 1.2 + 0.5 + yShift;
         temp_cube.position.z = -4;
         scene.add( temp_cube );
         this.loop.updatables.push(temp_cube);
