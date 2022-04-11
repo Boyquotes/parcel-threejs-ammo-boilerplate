@@ -18,5 +18,6 @@ https://birdlaketree.github.io/threejs-physics-boilerplate/
 ```bash
 rm -r build
 npm run build
+npm run copy-assets-to-build
 npm run deploy
 ```
