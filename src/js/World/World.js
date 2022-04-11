@@ -32,41 +32,54 @@ class World {
     // floor.body.setCollisionFlags(2);
     physics.add.ground({ width: 20, height: 20, depth: 0.1 })
 
-    const material = colorStandardMaterial(0x333333);
     const material_blue = colorStandardMaterial(0x3333ff);
+    const material_red = colorStandardMaterial(0xff2222);
+    const material_green = colorStandardMaterial(0x33ff33);
 
-    const nItems = 2;
-    const yShift = 2;
-    for (let i = 0; i < nItems; i++) {
-      for (let j = 0; j < nItems; j++) {
-        let temp_cube = cube(material);
-        temp_cube.position.x = (i - nItems/2) * 1.2 + 0.5;
-        temp_cube.position.y = (j - nItems/2) * 1.2 + 0.5 + yShift;
-        temp_cube.position.z = -4;
-        temp_cube.rotation.set(Math.random(), Math.random(), Math.random());
-        this.scene.add( temp_cube );
-        // this.loop.updatables.push(temp_cube);
-        physics.add.existing(temp_cube)
-      }
-    }
+    // const nItems = 2;
+    // const yShift = 2;
+    // for (let i = 0; i < nItems; i++) {
+    //   for (let j = 0; j < nItems; j++) {
+    //     let temp_cube = cube(material);
+    //     temp_cube.position.x = (i - nItems/2) * 1.2 + 0.5;
+    //     temp_cube.position.y = (j - nItems/2) * 1.2 + 0.5 + yShift;
+    //     temp_cube.position.z = -2;
+    //     temp_cube.rotation.set(Math.random(), Math.random(), Math.random());
+    //     this.scene.add( temp_cube );
+    //     this.loop.updatables.push(temp_cube);
+    //     physics.add.existing(temp_cube)
+    //   }
+    // }
 
-    let temp_cube_c = cube(material_blue);
-    temp_cube_c.position.x = 0;
-    temp_cube_c.position.y = 4;
-    temp_cube_c.position.z = -4;
-    temp_cube_c.rotation.set(Math.random(), Math.random(), Math.random());
-    this.scene.add( temp_cube_c );
-    // this.loop.updatables.push(temp_cube_c);
-    physics.add.existing(temp_cube_c)
+    let c1 = cube(material_blue, 0.2, .2, .2);
+    c1.castShadow = true;
+    c1.position.x = 0;
+    c1.position.y = 6;
+    c1.position.z = 0;
+    this.scene.add(c1);
+    physics.add.existing(c1);
+    // this.loop.updatables.push(c1);
 
-    let temp_cube_in = cube(material_blue);
-    temp_cube_in.position.x = 2;
-    temp_cube_in.position.y = 2;
-    temp_cube_in.position.z = 0;
-    temp_cube_in.rotation.set(Math.random(), Math.random(), Math.random());
-    temp_cube_c.add( temp_cube_in );
-    // this.loop.updatables.push(temp_cube_in);
-    // physics.add.existing(temp_cube_in)
+    let c2 = cube(material_red, .2, .2, 2);
+    c2.castShadow = true;
+    c2.position.x = 1;
+    c2.position.y = 6;
+    c2.position.z = 1;
+    this.scene.add(c2);
+    physics.add.existing(c2);
+    // this.loop.updatables.push(c2);
+
+    let c3 = cube(material_green, .2, 2, .2);
+    c3.castShadow = true;
+    c3.position.x = -1;
+    c3.position.y = 5;
+    c3.position.z = 0;
+    this.scene.add(c3);
+    physics.add.existing(c3);
+    this.loop.updatables.push(c3);
+
+    physics.add.constraints.fixed(c1.body, c2.body)
+    physics.add.constraints.fixed(c2.body, c3.body)
   }
 
   start() {

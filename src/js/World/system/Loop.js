@@ -39,7 +39,7 @@ class Loop {
     for (const object of this.updatables) {
       object.tick(delta);
     }
-
+    
     if (this.physics) {
       this.physics.update(delta * 1000);
       this.physics.updateDebugger();
