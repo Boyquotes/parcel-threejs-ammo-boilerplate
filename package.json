@@ -6,7 +6,6 @@
       "distDir": "./build"
     }
   },
-  "assetsPath": "test-files/assets",
   "version": "1.0.0",
   "description": "Boilerplate for a fast start with three.js",
   "scripts": {
