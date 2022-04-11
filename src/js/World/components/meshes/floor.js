@@ -1,7 +1,7 @@
 import {Math, PlaneGeometry, MeshStandardMaterial, Mesh, DoubleSide } from 'three';
 
 const createFloor = scene => {
-  const geometry = new PlaneGeometry(600, 600, 20, 20);
+  const geometry = new PlaneGeometry(20, 20, 20, 20);
   const parameters = {
     color: 0xdddddd,
     side: DoubleSide,

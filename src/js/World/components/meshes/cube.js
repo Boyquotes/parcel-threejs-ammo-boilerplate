@@ -8,6 +8,7 @@ const cube = material => {
   mesh.tick = (delta) => {
     mesh.rotation.x += delta * speed;
     mesh.rotation.y += delta * speed;
+    mesh.body.needUpdate = true // this is how you update kinematic bodies
   };
 
   return mesh;

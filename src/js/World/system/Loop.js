@@ -7,6 +7,7 @@ class Loop {
     this.renderer = renderer;
     this.updatables = [];
     this.clock = new Clock();
+    this.physics = undefined;
   }
 
   start() {
@@ -23,6 +24,10 @@ class Loop {
     this.renderer.setAnimationLoop(null);
   }
 
+  setPhysics(physics) {
+    this.physics = physics;
+  }
+
   tick() {
     // only call the getDelta function once per frame!
     const delta = this.clock.getDelta();
@@ -33,6 +38,11 @@ class Loop {
 
     for (const object of this.updatables) {
       object.tick(delta);
+    }
+
+    if (this.physics) {
+      this.physics.update(delta * 1000);
+      this.physics.updateDebugger();
     }
   }
 }
