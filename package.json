@@ -6,12 +6,20 @@
       "distDir": "./build"
     }
   },
+  "staticFiles": {
+    "staticPath": [
+      "public"
+    ]
+  },
+  "assetsPath": "test-files/assets",
   "version": "1.0.0",
   "description": "Boilerplate for a fast start with three.js",
   "scripts": {
     "start": "parcel",
     "build": "parcel build --public-url '.'",
     "deploy": "gh-pages -d build",
+    "copy-assets-to-dist": "cp -r static dist",
+    "copy-assets-to-build": "cp -r static build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
