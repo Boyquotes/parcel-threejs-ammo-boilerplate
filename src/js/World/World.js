@@ -19,7 +19,7 @@ class World {
     this.lights = createLights(this.scene);
     this.loop = new Loop(this.camera, this.scene, this.renderer);
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-    PhysicsLoader('/static/ammo/', () => this.ammoStart());        
+    PhysicsLoader('static/ammo', () => this.ammoStart());        
   }
 
   ammoStart() {
