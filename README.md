@@ -21,7 +21,7 @@ npm run copy-assets-to-build
 ### GitHub Page
 https://birdlaketree.github.io/parcel-threejs-ammo-boilerplate/
 
-### how to deploy for github pages
+### How to deploy for github pages
 ```bash
 rm -r build
 npm run build
