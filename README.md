@@ -1,4 +1,4 @@
-# threejs-physics-boilerplate
+# parcel-threejs-ammo-boilerplate
 Boilerplate for a fast start with physics in three.js
 
 ### Quick start
@@ -19,7 +19,7 @@ npm run copy-assets-to-build
 ````
 
 ### GitHub Page
-https://birdlaketree.github.io/threejs-physics-boilerplate/
+https://birdlaketree.github.io/parcel-threejs-ammo-boilerplate/
 
 ### how to deploy for github pages
 ```bash

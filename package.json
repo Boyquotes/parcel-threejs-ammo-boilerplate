@@ -1,5 +1,5 @@
 {
-  "name": "threejs-physics-boilerplate",
+  "name": "parcel-threejs-ammo-boilerplate",
   "source": "src/index.html",
   "targets": {
     "default": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/birdlaketree/threejs-physics-boilerplate.git"
+    "url": "git+https://github.com/birdlaketree/parcel-threejs-ammo-boilerplate.git"
   },
   "keywords": [
     "javascript",
@@ -30,9 +30,9 @@
   "author": "vedran.kolac@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/birdlaketree/threejs-physics-boilerplate/issues"
+    "url": "https://github.com/birdlaketree/parcel-threejs-ammo-boilerplate/issues"
   },
-  "homepage": "https://birdlaketree.github.io/threejs-physics-boilerplate/",
+  "homepage": "https://birdlaketree.github.io/parcel-threejs-ammo-boilerplate/",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.3.2",
     "buffer": "^6.0.3",
